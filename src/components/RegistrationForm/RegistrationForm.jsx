@@ -35,22 +35,34 @@ export default function RegistrationForm() {
       validationSchema={registrationFormSchema}
     >
       <Form className={css.form} autoComplete="off">
-        <label className={css.label}>
-          Username
-          <Field type="text" name="name" />
-        </label>
-        <ErrorMessage className={css.error} name="name" component="span" />
-        <label className={css.label}>
-          Email
-          <Field type="email" name="email" />
-        </label>
-        <ErrorMessage className={css.error} name="email" component="span" />
-        <label className={css.label}>
-          Password
-          <Field type="password" name="password" />
-        </label>
-        <ErrorMessage className={css.error} name="password" component="span" />
-        <button type="submit">Register</button>
+        <div className={css.group}>
+          <label className={css.label} htmlFor="name">
+            Username
+          </label>
+          <Field type="text" name="name" id="name" />
+          <ErrorMessage className={css.error} name="name" component="span" />
+        </div>
+        <div className={css.group}>
+          <label className={css.label} htmlFor="email">
+            Email
+          </label>
+          <Field type="email" name="email" id="email" />
+          <ErrorMessage className={css.error} name="email" component="span" />
+        </div>
+        <div className={css.group}>
+          <label className={css.label} htmlFor="password">
+            Password
+          </label>
+          <Field type="password" name="password" id="password" />
+          <ErrorMessage
+            className={css.error}
+            name="password"
+            component="span"
+          />
+        </div>
+        <button type="submit" className={css.btn}>
+          Register
+        </button>
       </Form>
     </Formik>
   );
